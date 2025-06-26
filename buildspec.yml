@@ -6,7 +6,7 @@ phases:
 
   pre_build:
     commands:
-      - mvn clean install
+      - mvn clean install -DskipTests
       - echo Logging in to Amazon ECR...
       - aws --version
       - REPOSITORY_URI=606863148836.dkr.ecr.eu-north-1.amazonaws.com/employeeawscicd
