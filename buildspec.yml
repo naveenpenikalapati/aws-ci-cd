@@ -4,7 +4,6 @@ phases:
     runtime-versions:
       java: corretto21
 
-
   pre_build:
     commands:
       - mvn clean install -DskipTests
