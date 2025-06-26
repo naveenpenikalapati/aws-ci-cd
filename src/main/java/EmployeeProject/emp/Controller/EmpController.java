@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import EmployeeProject.emp.EmployeWrapper;
 import EmployeeProject.emp.Employee;
 import EmployeeProject.emp.Service.EmpService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 
 @RestController
 public class EmpController 
@@ -26,6 +28,7 @@ public class EmpController
     
 //   get all employees
     @GetMapping("/allemp")
+    @Operation(summary = "Get All students ", description = "Returns all students ")
     public List<Employee> getAllEmployees()
     {
     	return empservice.getAllEmployees();
@@ -45,6 +48,7 @@ public class EmpController
     }
 //   adding an employee   
     @PostMapping("/addemp")
+    @Operation(summary = "Add a new student")
     public ResponseEntity<Employee> addEmployee(@RequestBody Employee addemp)
     {
     	Employee emp1 = empservice.addEmployee(addemp);
